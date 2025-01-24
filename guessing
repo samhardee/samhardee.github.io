@@ -1,4 +1,4 @@
-'''mermaid
+```mermaid
 flowchart TD
     A[Start Game] --> B[Generate Random Number]
     B --> C[Set Number of Attempts]
@@ -17,4 +17,5 @@ flowchart TD
     M --> G
     G --> N[Play Again?]
     N -- Yes --> A
-    N -- No --> O[End Game]'''
+    N -- No --> O[End Game]
+```
