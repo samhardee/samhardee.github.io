@@ -1,21 +1,21 @@
 ```mermaid
 flowchart TD
-    A[Start Game] --> B[Generate Random Number]
-    B --> C[Set Number of Attempts]
-    C --> D[Ask User for a Guess]
-    D --> E{Is Guess Correct?}
-    E -- Yes --> F[User Wins!]
-    F --> G[End Game]
-    E -- No --> H{Is Guess Too High?}
-    H -- Yes --> I[Display Too High!]
-    H -- No --> J[Display Too Low!]
-    I --> K[Decrease Attempt Counter]
-    J --> K[Decrease Attempt Counter]
-    K --> L{Attempts Left?}
-    L -- Yes --> D
-    L -- No --> M[User Loses!]
+    A[start game] --> B[generate random number]
+    B --> C[set number of attempts]
+    C --> D[ask user for a guess]
+    D --> E{is user's guess correct?}
+    E -- yes --> F[user wins!]
+    F --> G[end game]
+    E -- no --> H{is user's guess too high?}
+    H -- yes --> I[display too high!]
+    H -- no --> J[display too low!]
+    I --> K[decrease attempt counter]
+    J --> K[decrease attempt counter]
+    K --> L{how many attempts left?}
+    L -- yes --> D
+    L -- no --> M[user loses!]
     M --> G
-    G --> N[Play Again?]
-    N -- Yes --> A
-    N -- No --> O[End Game]
+    G --> N[play again?]
+    N -- yes --> A
+    N -- no --> O[end game]
 ```
