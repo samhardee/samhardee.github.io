@@ -7,8 +7,8 @@ flowchart TD
     E -- Yes --> F[User Wins!]
     F --> G[End Game]
     E -- No --> H{Is Guess Too High?}
-    H -- Yes --> I[Display "Too High!"]
-    H -- No --> J[Display "Too Low!"]
+    H -- Yes --> I[Display Too High!]
+    H -- No --> J[Display Too Low!]
     I --> K[Decrease Attempt Counter]
     J --> K[Decrease Attempt Counter]
     K --> L{Attempts Left?}
