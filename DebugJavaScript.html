@@ -25,33 +25,31 @@
         <button type="button" onclick="calculateMortgage()">Calculate</button>
     </form>
     <p id="result"></p>
-
+    
     <script>
+
         function calculateMortgage() {
-            const principal = parseFloat(document.getElementById("principal").value);
-            const annualRate = parseFloat(document.getElementById("rate").value) / 100;
-            const years = parseFloat(document.getElementById("years").value);
+            // Get the initial amount from the principal box
+            const principal = document.getElementById("principle").value;
 
-            if (isNaN(principal) || isNaN(annualRate) || isNaN(years)) {
-                document.getElementById("result").innerText = "Please enter valid numbers.";
+            // update rate from the box
+            const rate = document.getElementById("rate").value / 100;
+            // get the years to calculate
+            const years = document.getElementById("years).value;
+
+            // Call the power funtion, pow, from Math
+            const monthlyRate = Math.pw(1 + rate, years * 12);
+
+            if (rate === 0) {
+                document.getElementById("result").innerText = "Interest rate cannot be zero.";
                 return;
             }
 
-            const months = years * 12;
-
-            if (annualRate === 0) {
-                const monthlyPayment = principal / months;
-                document.getElementById("result").innerText = `Your monthly payment is $${monthlyPayment.toFixed(2)}`;
-                return;
-            }
-
-            const monthlyRate = annualRate / 12;
-            const factor = Math.pow(1 + monthlyRate, months);
-            const monthlyPayment = (principal * monthlyRate * factor) / (factor - 1);
-
+            const monthlyPayment = (principal * rate * monthlyRate) / (monthlyRate - 1);
             document.getElementById("result").innerText = `Your monthly payment is $${monthlyPayment.toFixed(2)}`;
         }
     </script>
 </body>
+</html>
 </html>
 
